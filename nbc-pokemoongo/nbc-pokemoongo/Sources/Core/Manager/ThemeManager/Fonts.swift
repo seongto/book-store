@@ -7,26 +7,33 @@
 
 import UIKit
 
+enum TitleSize {
+    case title1
+    case title2
+}
+
+enum HeadlineSize {
+    case headline1
+    case headline2
+}
+
 struct Fonts {
     // MARK: - default font style
     
-    static let title1 = UIFont.systemFont(ofSize: 45, weight: .light)
-    static let title1Bold = UIFont.systemFont(ofSize: 45, weight: .heavy)
+    static let display1 = UIFont.pretendard(ofSize: 48, weight: .regular)
+    static let display1Bold = UIFont.pretendard(ofSize: 48, weight: .semibold)
     
-    static let title2 = UIFont.systemFont(ofSize: 34, weight: .light)
-    static let title2Bold = UIFont.systemFont(ofSize: 34, weight: .heavy)
+    static let headline1 = UIFont.pretendard(ofSize: 32, weight: .regular)
+    static let headline1Bold = UIFont.pretendard(ofSize: 32, weight: .semibold)
+    static let headline2 = UIFont.pretendard(ofSize: 28, weight: .regular)
+    static let headline2Bold = UIFont.pretendard(ofSize: 28, weight: .semibold)
     
-    static let h1 = UIFont.systemFont(ofSize: 28, weight: .regular)
-    static let h1Bold = UIFont.systemFont(ofSize: 28, weight: .heavy)
+    static let title1 = UIFont.pretendard(ofSize: 24, weight: .regular)
+    static let title1Bold = UIFont.pretendard(ofSize: 24, weight: .semibold)
+    static let title2 = UIFont.pretendard(ofSize: 18, weight: .regular)
+    static let title2Bold = UIFont.pretendard(ofSize: 18, weight: .semibold)
     
-    static let h2 = UIFont.systemFont(ofSize: 22, weight: .regular)
-    static let h2Bold = UIFont.systemFont(ofSize: 22, weight: .heavy)
-    
-    static let h3 = UIFont.systemFont(ofSize: 20, weight: .regular)
-    static let h3Bold = UIFont.systemFont(ofSize: 20, weight: .heavy)
-    
-    static let regular = UIFont.systemFont(ofSize: 17, weight: .regular)
-    static let bold = UIFont.systemFont(ofSize: 17, weight: .bold)
-    static let small = UIFont.systemFont(ofSize: 15, weight: .regular)
-    static let caption = UIFont.systemFont(ofSize: 12, weight: .regular)
+    static let body = UIFont.pretendard(ofSize: 14, weight: .regular)
+    static let bold = UIFont.pretendard(ofSize: 14, weight: .semibold)
+    static let caption = UIFont.pretendard(ofSize: 12, weight: .regular)
 }

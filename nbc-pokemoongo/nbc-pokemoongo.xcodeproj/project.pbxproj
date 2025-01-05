@@ -22,6 +22,7 @@
 		E99799E62D1DC71F00957CA0 /* Exceptions for "nbc-pokemoongo" folder in "nbc-pokemoongo" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				App/ConfigDevelop.xcconfig,
 				App/Info.plist,
 			);
 			target = E99799D02D1DC71D00957CA0 /* nbc-pokemoongo */;
@@ -109,7 +110,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					E99799D02D1DC71D00957CA0 = {
 						CreatedOnToolsVersion = 16.1;
