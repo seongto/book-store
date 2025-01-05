@@ -18,7 +18,7 @@ struct AppHelpers {
               let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
             return nil
         }
-        
+                
         // 루트 ViewController 가져오기
         var topViewController = window.rootViewController
         
