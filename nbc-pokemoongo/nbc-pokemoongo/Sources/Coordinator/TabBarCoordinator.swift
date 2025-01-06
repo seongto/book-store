@@ -12,8 +12,8 @@ class TabBarCoordinator: Coordinator {
     var tabBarController: UITabBarController
     var childCoordinators: [Coordinator] = []
     
-    init() {
-        self.navigationController = UINavigationController()
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
         self.tabBarController = UITabBarController()
     }
     
