@@ -15,14 +15,15 @@ protocol Coordinator {
 class AppCoordinator: Coordinator {
     var window: UIWindow
     var navigationController: UINavigationController
+    var tabBarCoordinator: TabBarCoordinator
     
     init(window: UIWindow) {
         self.window = window
         self.navigationController = UINavigationController()
+        self.tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
     }
     
     func start() {
-        let tabBarCoordinator = TabBarCoordinator()
         tabBarCoordinator.start()
         
         window.rootViewController = tabBarCoordinator.tabBarController
