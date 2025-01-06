@@ -13,9 +13,9 @@ class BookSearchResultCell: UICollectionViewCell {
     
     static let id: String = "BookSearchResultCell"
     
-    let bookTitleLabel: UILabel = UILabel()
-    let bookAuthorLabel: UILabel = UILabel()
-    let bookCostLabel: UILabel = UILabel()
+    let bookTitleLabel: UILabel = TitleLabel(isBold: true)
+    let bookAuthorLabel: UILabel = BodyLabel()
+    let bookCostLabel: UILabel = BodyLabel()
     
     
     // MARK: - Life Cycles
@@ -50,11 +50,32 @@ extension BookSearchResultCell {
     }
     
     func setupUIProperties() {
-        
+        self.backgroundColor = Colors.appBackground
+        self.layer.borderWidth = 1
+        self.layer.borderColor = Colors.systemColor(.r900)?.cgColor
+                
+        bookTitleLabel.setSystemColor(.r900)
+        bookAuthorLabel.setTextColor(.gray)
+        bookCostLabel.textAlignment = .right
     }
     
     func setupLayouts() {
+        bookTitleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(Layouts.itemSpacing3)
+            make.leading.trailing.equalToSuperview().inset(Layouts.padding)
+        }
         
+        bookAuthorLabel.snp.makeConstraints { make in
+            make.top.equalTo(bookTitleLabel.snp.bottom).offset(Layouts.itemSpacing2)
+            make.leading.equalToSuperview().inset(Layouts.padding)
+            make.bottom.equalToSuperview().inset(Layouts.itemSpacing3)
+        }
+        
+        bookCostLabel.snp.makeConstraints { make in
+            make.top.equalTo(bookTitleLabel.snp.bottom).offset(Layouts.itemSpacing2)
+            make.trailing.equalToSuperview().inset(Layouts.padding)
+            make.bottom.equalToSuperview().inset(Layouts.itemSpacing3)
+        }
     }
 }
 
@@ -62,10 +83,8 @@ extension BookSearchResultCell {
 
 extension BookSearchResultCell {
     func configure(with book: Book) {
-        
-        DispatchQueue.global().async { [weak self] in
-            
-        }
+        self.bookTitleLabel.text = book.title
+        self.bookAuthorLabel.text = book.authors.joined(separator: ", ")
+        self.bookCostLabel.text = "\(book.price) 원"
     }
-    
 }
