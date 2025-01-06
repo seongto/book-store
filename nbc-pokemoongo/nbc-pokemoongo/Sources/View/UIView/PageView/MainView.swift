@@ -15,7 +15,7 @@ class MainView: UIView {
     // MARK: - UIComponents & Properties
     
     let bookSearchBar = UISearchBar()
-    let bookCollectionView: UICollectionView = UICollectionView()
+    let bookCollectionView = BookCollectionView()
     
     
     // MARK: - Life Cycles
@@ -40,7 +40,7 @@ extension MainView {
     func setupSubViews() {
         [
             bookSearchBar,
-//            bookCollectionView
+            bookCollectionView
         ].forEach { addSubview($0) }
     }
     
@@ -49,23 +49,15 @@ extension MainView {
     }
     
     func setupLayouts() {
-        
         bookSearchBar.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(70)
             make.leading.trailing.equalToSuperview()
         }
-    }
-}
-
-
-// MARK: - CollectionView Setup
-
-extension MainView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        
+        bookCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(bookSearchBar.snp.bottom).offset(Layouts.itemSpacing2)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(100)
+        }
     }
 }

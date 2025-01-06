@@ -12,6 +12,8 @@
 		E9979A0C2D1DCB2800957CA0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E9979A0B2D1DCB2800957CA0 /* RxCocoa */; };
 		E9979A0E2D1DCB2800957CA0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E9979A0D2D1DCB2800957CA0 /* RxRelay */; };
 		E9979A102D1DCB2800957CA0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9979A0F2D1DCB2800957CA0 /* RxSwift */; };
+		E9D000A62D2B2D8A0079ED77 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = E9D000A52D2B2D8A0079ED77 /* RxDataSources */; };
+		E9D001982D2BD27C0079ED77 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E9D001972D2BD27C0079ED77 /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,9 @@
 			files = (
 				E9979A0C2D1DCB2800957CA0 /* RxCocoa in Frameworks */,
 				E9979A062D1DCB0400957CA0 /* Alamofire in Frameworks */,
+				E9D001982D2BD27C0079ED77 /* Swinject in Frameworks */,
 				E9979A102D1DCB2800957CA0 /* RxSwift in Frameworks */,
+				E9D000A62D2B2D8A0079ED77 /* RxDataSources in Frameworks */,
 				E9979A0E2D1DCB2800957CA0 /* RxRelay in Frameworks */,
 				E9979A092D1DCB1200957CA0 /* SnapKit in Frameworks */,
 			);
@@ -97,6 +101,8 @@
 				E9979A0B2D1DCB2800957CA0 /* RxCocoa */,
 				E9979A0D2D1DCB2800957CA0 /* RxRelay */,
 				E9979A0F2D1DCB2800957CA0 /* RxSwift */,
+				E9D000A52D2B2D8A0079ED77 /* RxDataSources */,
+				E9D001972D2BD27C0079ED77 /* Swinject */,
 			);
 			productName = "nbc-pokemoongo";
 			productReference = E99799D12D1DC71D00957CA0 /* nbc-pokemoongo.app */;
@@ -130,6 +136,8 @@
 				E9979A042D1DCB0400957CA0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E9979A072D1DCB1200957CA0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E9979A0A2D1DCB2800957CA0 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E9D000A42D2B2D8A0079ED77 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				E9D001962D2BD27C0079ED77 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E99799D22D1DC71D00957CA0 /* Products */;
@@ -387,6 +395,22 @@
 				minimumVersion = 6.8.0;
 			};
 		};
+		E9D000A42D2B2D8A0079ED77 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		E9D001962D2BD27C0079ED77 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -414,6 +438,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9979A0A2D1DCB2800957CA0 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		E9D000A52D2B2D8A0079ED77 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D000A42D2B2D8A0079ED77 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		E9D001972D2BD27C0079ED77 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D001962D2BD27C0079ED77 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -17,6 +17,13 @@ class MainTabCoordinator: Coordinator {
     func start() {
         let mainVC = MainViewController()
         mainVC.title = "Main"
+        mainVC.coordinator = self
         navigationController.setViewControllers([mainVC], animated: false)
+    }
+    
+    func navigateToDetail(with selectedBook: Book) {
+        let detailVC = BookDetailViewController(selectedBook: selectedBook)
+        detailVC.title = "책 상세보기"
+        navigationController.pushViewController(detailVC, animated: true)
     }
 }

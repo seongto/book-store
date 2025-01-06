@@ -16,7 +16,7 @@ final class CoreDataStack {
     var context: NSManagedObjectContext
     
     private init() {
-        let container = NSPersistentContainer(name: "nbc_kickboard")
+        let container = NSPersistentContainer(name: "nbc_pokemoongo")
         
         container.loadPersistentStores { _, error in
             if let error {
