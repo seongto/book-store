@@ -15,7 +15,7 @@ class MainView: UIView {
     // MARK: - UIComponents & Properties
     
     let bookSearchBar = UISearchBar()
-    let bookCollectionView: UICollectionView = UICollectionView()
+    let bookCollectionView = BookCollectionView()
     
     
     // MARK: - Life Cycles

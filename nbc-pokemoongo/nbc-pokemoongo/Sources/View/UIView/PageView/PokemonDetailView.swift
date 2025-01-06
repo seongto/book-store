@@ -22,6 +22,7 @@ class PokemonDetailView: UIView {
 }
 
 // MARK: - UI Layouts
+
 extension PokemonDetailView {
     func setupSubViews() {
         [
