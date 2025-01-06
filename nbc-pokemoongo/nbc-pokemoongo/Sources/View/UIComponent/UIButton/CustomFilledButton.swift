@@ -1,5 +1,5 @@
 //
-//  CustomButton.swift
+//  CustomFilledButton.swift
 //  nbc-pokemoongo
 //
 //  Created by MaxBook on 1/6/25.
@@ -57,7 +57,7 @@ class CustomFilledButton: UIButton  {
 
 extension CustomFilledButton {
     func setupProperties(_ color: ButtonColor) {
-        var buttonColor = self.getButtonColor(color)
+        let buttonColor = self.getButtonColor(color)
         var config = UIButton.Configuration.filled()
         
         var titleContainer = AttributeContainer()
@@ -71,6 +71,8 @@ extension CustomFilledButton {
         
         self.configurationUpdateHandler = { _ in
             switch self.state {
+            case .normal:
+                config.baseBackgroundColor = buttonColor
             case .highlighted:
                 config.baseBackgroundColor = buttonColor.withAlphaComponent(0.8)
             case .disabled:

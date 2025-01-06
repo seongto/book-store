@@ -20,6 +20,8 @@ class TitleLabel: UILabel {
     }
 }
 
+// MARK: - Setup UI
+
 extension TitleLabel {
     func setupUIProperties(size: TitleSize, isBold: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -34,5 +36,7 @@ extension TitleLabel {
         default :
             self.font = isBold ? Fonts.title2Bold : Fonts.title2
         }
+        
+        self.setLineSpacing(lineSpacing: font.pointSize * 1.4)
     }
 }

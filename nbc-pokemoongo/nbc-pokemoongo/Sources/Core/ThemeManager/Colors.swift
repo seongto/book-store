@@ -54,23 +54,26 @@ enum LabelFontColor: String {
 
 struct Colors {
     // MARK: - SystemColor
-    
+        
     // 시스템 컬러 교체는 아래의 값을 변경.
-    static var selectedColor: SystemColors = .Red
+    static var selectedColor: SystemColors = .Emerald
     
-    static func systemColor(_ ramp: SystemColorRamps) -> UIColor? {
-        return UIColor(named: "\(selectedColor.rawValue)-\(ramp.rawValue)" )
-    }
+//    static var asdfasdfe: UIColor = .
     
     static func changeSystemColor(_ color: SystemColors) {
         selectedColor = color
     }
     
+    static func systemColor(_ ramp: SystemColorRamps) -> UIColor? {
+        return UIColor(named: "\(selectedColor.rawValue)-\(ramp.rawValue)" )
+    }
+    
     /// 숫자가 낮을수록 연하다.
     /// `.PurpleGray-<ramp>`로 직접 확인 가능.
     static func systemGray(_ ramp: SystemColorRamps) -> UIColor? {
-        return UIColor(named: "PurpleGray-\(ramp.rawValue)")
+        return UIColor(named: "Purplegray-\(ramp.rawValue)")
     }
+    
     
     
     // MARK: - BrandColor

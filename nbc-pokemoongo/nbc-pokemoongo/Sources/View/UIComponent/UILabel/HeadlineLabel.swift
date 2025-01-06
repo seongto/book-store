@@ -34,5 +34,7 @@ extension HeadlineLabel {
         default :
             self.font = isBold ? Fonts.headline2Bold : Fonts.headline2
         }
+        
+        self.setLineSpacing(lineSpacing: font.pointSize * 1.3)
     }
 }
