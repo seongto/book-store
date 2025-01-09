@@ -17,6 +17,11 @@ class PokemonTabCoordinator: Coordinator {
     func start() {
         let pokemonVC = PokemonViewController()
         pokemonVC.title = "Pokemon"
-        navigationController.setViewControllers([pokemonVC], animated: false)
+        pokemonVC.tabBarItem = UITabBarItem(
+            title: "pokemon",
+            image: UIImage(systemName: "circle.circle"),
+            selectedImage: UIImage(systemName: "circle.circle.fill")
+        )
+        navigationController.setViewControllers([pokemonVC], animated: true)
     }
 }

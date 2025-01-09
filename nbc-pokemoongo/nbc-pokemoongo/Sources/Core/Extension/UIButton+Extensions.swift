@@ -7,24 +7,17 @@
 
 import UIKit
 
+enum ButtonColor {
+    case statusRed
+    case statusGreen
+    case statusYellow
+    case primary
+    case secondary
+    case disalbled
+}
 
 extension UIButton {
-    func getButtonColor(_ color: ButtonColor) -> UIColor {
-        switch color {
-        case .statusRed:
-            return .statusRed
-        case .statusGreen:
-            return .statusGreen
-        case .statusYellow:
-            return .statusYellow
-        case .primary:
-            return Colors.systemColor(.r900) ?? .purplegray900
-        case .secondary:
-            return Colors.systemColor(.r500) ?? .purplegray500
-        case .disalbled:
-            return Colors.systemColor(.r100) ?? .purplegray100
-        }
-    }
+    
 }
 
 

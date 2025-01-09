@@ -17,6 +17,11 @@ class BookCartTabCoordinator: Coordinator {
     func start() {
         let bookCartVC = BookCartViewController()
         bookCartVC.title = "Book Cart"
-        navigationController.setViewControllers([bookCartVC], animated: false)
+        bookCartVC.tabBarItem = UITabBarItem(
+            title: "cart",
+            image: UIImage(systemName: "cart"),
+            selectedImage: UIImage(systemName: "cart.fill")
+        )
+        navigationController.setViewControllers([bookCartVC], animated: true)
     }
 }

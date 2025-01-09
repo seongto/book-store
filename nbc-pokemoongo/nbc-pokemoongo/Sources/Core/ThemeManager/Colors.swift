@@ -82,5 +82,22 @@ struct Colors {
     
     // MARK: - Basic Colors
     
-    static var appBackground: UIColor = .white
+    static var appBackground: UIColor = .backgroundWhite
+    
+    static func getButtonColor(_ color: ButtonColor) -> UIColor {
+        switch color {
+        case .statusRed:
+            return .statusRed
+        case .statusGreen:
+            return .statusGreen
+        case .statusYellow:
+            return .statusYellow
+        case .primary:
+            return Colors.systemColor(.r900) ?? .purplegray900
+        case .secondary:
+            return Colors.systemColor(.r500) ?? .purplegray500
+        case .disalbled:
+            return Colors.systemColor(.r100) ?? .purplegray100
+        }
+    }
 }

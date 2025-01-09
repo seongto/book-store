@@ -26,11 +26,10 @@ class SectionHeaderView: UICollectionReusableView {
     private func setupUI() {
         self.addSubview(titleLabel)
         
-        titleLabel.setSystemColor(.r500)
+        titleLabel.setSystemColor(.r900)
         
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(Layouts.buttonHeightSmall)
         }
     }
     

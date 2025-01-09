@@ -24,6 +24,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
+        navigationController.setNavigationBarHidden(true, animated: false)
         tabBarCoordinator.start()
         
         window.rootViewController = tabBarCoordinator.tabBarController

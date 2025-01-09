@@ -1,5 +1,5 @@
 //
-//  ModalViewController.swift
+//  BottomSlideModalViewController.swift
 //  nbc-pokemoongo
 //
 //  Created by MaxBook on 12/27/24.
@@ -9,21 +9,7 @@ import UIKit
 import SnapKit
 
 
-protocol ModalLifecycleNotifiable: AnyObject {
-    func onModalWillAppear()
-    func onModalWillDisappear()
-}
-
-protocol ModalCloseDelegate: AnyObject {
-    func closeModal()
-}
-
-protocol ModalCloseable: AnyObject {
-    var delegate: ModalCloseDelegate? { get set }
-    func closeModal()
-}
-
-final class GlobalModalViewController: UIViewController, ModalCloseDelegate {
+final class BottomSlideModalViewController: UIViewController, ModalCloseDelegate {
     // MARK: - Properties
 
     private let modalContentsView: UIView
@@ -45,7 +31,6 @@ final class GlobalModalViewController: UIViewController, ModalCloseDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackground()
         setupTargetView()
     }
     
@@ -71,19 +56,15 @@ final class GlobalModalViewController: UIViewController, ModalCloseDelegate {
 
 // MARK: - Setup UI Layouts
 
-extension GlobalModalViewController {
-    
-    private func setupBackground() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-    }
-
+extension BottomSlideModalViewController {
     private func setupTargetView() {
         view.addSubview(modalContentsView)
+        view.backgroundColor = .white
         modalContentsView.translatesAutoresizingMaskIntoConstraints = false
         
         modalContentsView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(Layouts.paddingSmall)
+            $0.top.equalToSuperview().inset(50)
+            $0.bottom.trailing.leading.equalToSuperview()
         }
     }
 }
@@ -91,7 +72,7 @@ extension GlobalModalViewController {
 
 // MARK: - Action Management & Mapping
 
-extension GlobalModalViewController {
+extension BottomSlideModalViewController {
     func closeModal() {
         self.dismiss(animated: true, completion: nil)
     }

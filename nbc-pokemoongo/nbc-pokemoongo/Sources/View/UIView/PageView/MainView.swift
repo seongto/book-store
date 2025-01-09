@@ -46,6 +46,7 @@ extension MainView {
     
     func setupUIProperties() {
         self.backgroundColor = Colors.appBackground
+        bookSearchBar.text = "개발자"
     }
     
     func setupLayouts() {

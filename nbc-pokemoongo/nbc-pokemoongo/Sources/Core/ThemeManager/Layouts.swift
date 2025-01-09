@@ -23,6 +23,8 @@ struct Layouts {
     static let itemSpacing6: CGFloat = 28
     static let itemSpacing7: CGFloat = 32
     
+    static let bottomArea: CGFloat = 56
+    
     static let buttonHeight: CGFloat = 48
     static let buttonHeightSmall: CGFloat = 32
 }

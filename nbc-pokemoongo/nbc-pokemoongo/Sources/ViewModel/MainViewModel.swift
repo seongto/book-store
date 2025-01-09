@@ -93,7 +93,7 @@ extension MainViewModel {
             
         case .failure:
             let alertView = AlertView(title: "최근 책 정보 가져오기 실패", message: "잠시 후 다시 시도해주세요.")
-            let _ = ModalManager.createGlobalModal(content: alertView)
+            let _ = ModalManager.createBottomSlideModal(content: alertView)
         }
         
         
