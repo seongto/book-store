@@ -13,7 +13,7 @@ import RxCocoa
 class BookCartView: UIView {
     // MARK: - UIComponents & Properties
     
-    
+    let cartCollectionView = BookCollectionView()
     
     
     // MARK: - Life Cycles
@@ -25,7 +25,7 @@ class BookCartView: UIView {
 extension BookCartView {
     func setupSubViews() {
         [
-            
+            cartCollectionView
         ].forEach { addSubview($0) }
     }
     
@@ -34,6 +34,10 @@ extension BookCartView {
     }
     
     func setupLayouts() {
-        
+        cartCollectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(100)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(100)
+        }
     }
 }

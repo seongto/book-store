@@ -95,7 +95,7 @@ extension AlertView {
 }
 
 
-// MARK: - UI Layouts
+// MARK: - Modal Porotocol Constraints
 
 extension AlertView {
     func onModalWillAppear() {

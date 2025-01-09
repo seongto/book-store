@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E958397F2D2FE96C00231343 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E958397E2D2FE96C00231343 /* Kingfisher */; };
 		E9979A062D1DCB0400957CA0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E9979A052D1DCB0400957CA0 /* Alamofire */; };
 		E9979A092D1DCB1200957CA0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9979A082D1DCB1200957CA0 /* SnapKit */; };
 		E9979A0C2D1DCB2800957CA0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E9979A0B2D1DCB2800957CA0 /* RxCocoa */; };
@@ -51,6 +52,7 @@
 				E9979A062D1DCB0400957CA0 /* Alamofire in Frameworks */,
 				E9D001982D2BD27C0079ED77 /* Swinject in Frameworks */,
 				E9979A102D1DCB2800957CA0 /* RxSwift in Frameworks */,
+				E958397F2D2FE96C00231343 /* Kingfisher in Frameworks */,
 				E9D000A62D2B2D8A0079ED77 /* RxDataSources in Frameworks */,
 				E9979A0E2D1DCB2800957CA0 /* RxRelay in Frameworks */,
 				E9979A092D1DCB1200957CA0 /* SnapKit in Frameworks */,
@@ -103,6 +105,7 @@
 				E9979A0F2D1DCB2800957CA0 /* RxSwift */,
 				E9D000A52D2B2D8A0079ED77 /* RxDataSources */,
 				E9D001972D2BD27C0079ED77 /* Swinject */,
+				E958397E2D2FE96C00231343 /* Kingfisher */,
 			);
 			productName = "nbc-pokemoongo";
 			productReference = E99799D12D1DC71D00957CA0 /* nbc-pokemoongo.app */;
@@ -138,6 +141,7 @@
 				E9979A0A2D1DCB2800957CA0 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E9D000A42D2B2D8A0079ED77 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				E9D001962D2BD27C0079ED77 /* XCRemoteSwiftPackageReference "Swinject" */,
+				E958397D2D2FE96C00231343 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E99799D22D1DC71D00957CA0 /* Products */;
@@ -371,6 +375,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E958397D2D2FE96C00231343 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
 		E9979A042D1DCB0400957CA0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -414,6 +426,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E958397E2D2FE96C00231343 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E958397D2D2FE96C00231343 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E9979A052D1DCB0400957CA0 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E9979A042D1DCB0400957CA0 /* XCRemoteSwiftPackageReference "Alamofire" */;

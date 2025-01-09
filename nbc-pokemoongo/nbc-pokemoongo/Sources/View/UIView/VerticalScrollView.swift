@@ -10,7 +10,7 @@ import SnapKit
 
 class VerticalScrollView: UIScrollView {
     // MARK: - Properties
-    let contentView: UIView = UIView()
+    let contentView = UIView()
     
     // MARK: - Life Cycles
     
@@ -30,12 +30,14 @@ class VerticalScrollView: UIScrollView {
 // MARK: - UI Layouts
 
 extension VerticalScrollView {
-    override func addSubview(_ view: UIView) {
-        contentView.addSubview(view)
+    override func addSubview(_ subView: UIView) {
+        contentView.addSubview(subView)
     }
     
     func setupSubViews() {
-        self.addSubview(contentView)
+        print("aaaa")
+        super.addSubview(contentView)
+        print("bbbb")
     }
     
     func setupUIProperties() {

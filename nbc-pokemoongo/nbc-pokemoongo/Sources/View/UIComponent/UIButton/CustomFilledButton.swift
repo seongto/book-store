@@ -9,16 +9,6 @@ import UIKit
 import SnapKit
 
 
-enum ButtonColor {
-    case statusRed
-    case statusGreen
-    case statusYellow
-    case primary
-    case secondary
-    case disalbled
-}
-
-
 class CustomFilledButton: UIButton  {
     // MARK: - Properties
     
@@ -57,7 +47,8 @@ class CustomFilledButton: UIButton  {
 
 extension CustomFilledButton {
     func setupProperties(_ color: ButtonColor) {
-        let buttonColor = self.getButtonColor(color)
+        let buttonColor = Colors.getButtonColor(color)
+        print(buttonColor)
         var config = UIButton.Configuration.filled()
         
         var titleContainer = AttributeContainer()
@@ -67,6 +58,7 @@ extension CustomFilledButton {
         config.titleAlignment = .center
         config.background.cornerRadius = isRounded ? Layouts.buttonHeight / 2 : 0
         config.baseForegroundColor = .fontWhite
+        config.baseBackgroundColor = buttonColor
         config.contentInsets = NSDirectionalEdgeInsets(top: Layouts.itemSpacing1, leading: Layouts.paddingSmall, bottom: Layouts.itemSpacing1, trailing: Layouts.paddingSmall)
         
         self.configurationUpdateHandler = { _ in
@@ -76,11 +68,13 @@ extension CustomFilledButton {
             case .highlighted:
                 config.baseBackgroundColor = buttonColor.withAlphaComponent(0.8)
             case .disabled:
-                config.baseBackgroundColor = self.getButtonColor(.disalbled)
+                config.baseBackgroundColor = Colors.getButtonColor(.disalbled)
             default:
                 config.baseBackgroundColor = buttonColor
             }
         }
+        
+        print(config.baseBackgroundColor)
         
         self.configuration = config
         

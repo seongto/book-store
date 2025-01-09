@@ -120,7 +120,7 @@ extension BookCollectionView {
         
         section.boundarySupplementaryItems = [header]
         section.interGroupSpacing = Layouts.itemSpacing2
-        section.contentInsets = NSDirectionalEdgeInsets(top: Layouts.itemSpacing3, leading: Layouts.padding, bottom: Layouts.itemSpacing1, trailing: Layouts.padding)
+        section.contentInsets = NSDirectionalEdgeInsets(top: Layouts.itemSpacing2, leading: Layouts.padding, bottom: Layouts.itemSpacing1, trailing: Layouts.padding)
         
         return section
     }
@@ -134,8 +134,8 @@ extension BookCollectionView {
             forCellWithReuseIdentifier: RecentBookCell.id
         )
         register(
-            BookSearchResultCell.self,
-            forCellWithReuseIdentifier: BookSearchResultCell.id
+            BookListCell.self,
+            forCellWithReuseIdentifier: BookListCell.id
         )
         register(
             SectionHeaderView.self,

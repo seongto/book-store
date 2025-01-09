@@ -6,55 +6,56 @@
 //
 
 import UIKit
+import SnapKit
+import RxSwift
+import RxCocoa
+
 
 class BookCartViewController: UIViewController {
     // MARK: - Properties
-    let bookCartView: BookCartView
+    
+    private let bookCartView = BookCartView()
+    private let bookCartViewModel = BookCartViewModel()
+    private let disposeBag = DisposeBag()
     
     
     // MARK: - Life Cycles
     
-    init(bookCartView: BookCartView = BookCartView()) {
-        self.bookCartView = bookCartView
-        super.init(nibName: nil, bundle: nil)
-        
-        view = bookCartView
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func loadView() {
+        super.loadView()
+        self.view = bookCartView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSubViews()
-        setupUIProperties()
-        setupLayouts()
+        setupBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
+        
     }
 
 }
 
 
-// MARK: - UI Layouts
+// MARK: - Bindings
+
 extension BookCartViewController {
-    func setupSubViews() {
-        
-    }
-    
-    func setupUIProperties() {
-        
-    }
-    
-    func setupLayouts() {
-        
+    func setupBindings() {
+        bookCartView.cartCollectionView.rx.modelSelected(Book.self)
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { book in
+                    ModalManager.createBottomSlideModal(content: BookDetailView(book: book, isCart: true))
+                }
+            ).disposed(by: disposeBag)
     }
 }
+
+

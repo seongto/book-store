@@ -53,7 +53,7 @@ extension MainViewController {
         // DataSource 설정
         let dataSource = RxCollectionViewSectionedReloadDataSource<BookSection>(
             configureCell: { dataSource, collectionView, indexPath, item in
-                print("indexPath : \(indexPath[1])")
+//                print("indexPath : \(indexPath[1])")
                 if indexPath.section == 0 {
                     // Recent Books 섹션
                     guard let cell = collectionView.dequeueReusableCell(
@@ -65,9 +65,9 @@ extension MainViewController {
                 } else {
                     // Search Results 섹션
                     guard let cell = collectionView.dequeueReusableCell(
-                        withReuseIdentifier: BookSearchResultCell.id,
+                        withReuseIdentifier: BookListCell.id,
                         for: indexPath
-                    ) as? BookSearchResultCell else { return UICollectionViewCell() }
+                    ) as? BookListCell else { return UICollectionViewCell() }
                     cell.configure(with: item)
                     return cell
                 }
@@ -106,8 +106,8 @@ extension MainViewController {
             .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
             .subscribe(
-                onNext: { [weak self] book in
-                    self?.navigateToBookDetails(book: book)
+                onNext: { book in
+                    ModalManager.createBottomSlideModal(content: BookDetailView(book: book, isCart: false))
                 }
             ).disposed(by: disposeBag)
     }
@@ -119,12 +119,6 @@ extension MainViewController {
 extension MainViewController {
     func getRecentBooks() {
         mainViewModel.refreshRecentBooks()
-    }
-    
-    func navigateToBookDetails(book: Book) {
-        guard let navigationController = self.navigationController else { return }
-
-        coordinator?.navigateToDetail(with: book)
     }
 }
 

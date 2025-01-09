@@ -1,5 +1,5 @@
 //
-//  BookSearchResultCell.swift
+//  BookListCell.swift
 //  nbc-pokemoongo
 //
 //  Created by MaxBook on 12/31/24.
@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-class BookSearchResultCell: UICollectionViewCell {
+class BookListCell: UICollectionViewCell {
     // MARK: - Properties
     
-    static let id: String = "BookSearchResultCell"
+    static let id: String = "BookListCell"
     
     let bookTitleLabel: UILabel = TitleLabel(isBold: true)
     let bookAuthorLabel: UILabel = BodyLabel()
@@ -40,7 +40,7 @@ class BookSearchResultCell: UICollectionViewCell {
 
 // MARK: - UI Layouts
 
-extension BookSearchResultCell {
+extension BookListCell {
     func setupSubViews() {
         [
             bookTitleLabel,
@@ -61,27 +61,27 @@ extension BookSearchResultCell {
     
     func setupLayouts() {
         bookTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(Layouts.itemSpacing3)
+            make.top.equalToSuperview().inset(Layouts.itemSpacing6)
             make.leading.trailing.equalToSuperview().inset(Layouts.padding)
         }
         
         bookAuthorLabel.snp.makeConstraints { make in
-            make.top.equalTo(bookTitleLabel.snp.bottom).offset(Layouts.itemSpacing2)
+            make.top.equalTo(bookTitleLabel.snp.bottom).offset(Layouts.itemSpacing3)
             make.leading.equalToSuperview().inset(Layouts.padding)
-            make.bottom.equalToSuperview().inset(Layouts.itemSpacing3)
+            make.bottom.equalToSuperview().inset(Layouts.itemSpacing5)
         }
         
         bookCostLabel.snp.makeConstraints { make in
-            make.top.equalTo(bookTitleLabel.snp.bottom).offset(Layouts.itemSpacing2)
+            make.top.equalTo(bookTitleLabel.snp.bottom).offset(Layouts.itemSpacing3)
             make.trailing.equalToSuperview().inset(Layouts.padding)
-            make.bottom.equalToSuperview().inset(Layouts.itemSpacing3)
+            make.bottom.equalToSuperview().inset(Layouts.itemSpacing6)
         }
     }
 }
 
 // MARK: - Cell Configure
 
-extension BookSearchResultCell {
+extension BookListCell {
     func configure(with book: Book) {
         self.bookTitleLabel.text = book.title
         self.bookAuthorLabel.text = book.authors.joined(separator: ", ")
